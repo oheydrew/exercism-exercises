@@ -8,12 +8,8 @@ class Year {
   }
 
   isLeap () {
-    // if it's div4 AND NOT div100 (but only if it isn't div400)
-    if ((this.div4) && !(this.div100 && !this.div400)) {
-      return true;
-    } else {
-      return false;
-    }
+    // return TRUE if div4 AND NOT div100 (but only if it isn't div400)
+    return ((this.div4) && !(this.div100 && !this.div400));
   }
 }
 
