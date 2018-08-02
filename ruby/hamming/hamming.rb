@@ -3,12 +3,10 @@ class Hamming
     def compute(strand_a, strand_b)
       check_length(strand_a, strand_b)
 
-      hamming = 0
-      strand_a.each_char.with_index(0) do |char, index|
-        hamming += 1 if char != strand_b[index]
+      # use 'with_index' to pass an index value, but need to destructure it in the reduce (char, index)
+      strand_a.each_char.with_index.reduce(0) do |memo, (char, index)|
+        char != strand_b[index] ? memo += 1 : memo
       end
-
-      hamming
     end
 
     private
