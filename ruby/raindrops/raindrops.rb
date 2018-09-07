@@ -1,6 +1,5 @@
 class Raindrops
-  def self.convert(number)
-    num = number.to_i
+  def self.convert(num)
     raise ArgumentError, 'Input must be a number greater than zero' if num.zero?
 
     conditions = { 3 => 'Pling', 5 => 'Plang', 7 => 'Plong' }
@@ -13,11 +12,10 @@ class Raindrops
     if output != ''
       output
     else
-      number.to_s
+      num.to_s
     end
   end
 end
-
 
 module BookKeeping
   VERSION = 3
